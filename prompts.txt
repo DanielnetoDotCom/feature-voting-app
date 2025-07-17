@@ -1,0 +1,106 @@
+Create a complete full-stack project called "feature-voting-app".
+
+Requirements:
+1. Backend:
+   - Use Node.js with Express
+   - Implement a REST API with the following endpoints:
+     - POST /features: Create a new feature
+     - GET /features: List all features with vote counts
+     - POST /features/:id/vote: Upvote a feature
+   - Use SQLite as the database (with an ORM like Sequelize or Knex)
+   - Include error handling and basic input validation
+
+2. Frontend:
+   - Use Flutter (for Android only)
+   - Show a list of features with their vote count
+   - Allow users to upvote features
+   - Use HTTP calls to connect to the backend
+
+Other requirements:
+- Create a `prompts.txt` file and write all prompts used in it
+- Add a `README.md` with instructions on how to run the backend and the Flutter app
+
+Make the code modular and easy to understand. Do not include unnecessary styling.
+
+
+________________________________________________________________________________________
+
+PROMPTS USED:
+
+1. Initial project setup:
+   "Create a complete full-stack project called 'feature-voting-app'" - Created the backend Node.js structure with Express, Sequelize, and SQLite
+
+2. Backend implementation:
+   - Created package.json with required dependencies (express, sequelize, sqlite3, cors, helmet, express-validator)
+   - Implemented server.js with Express setup, middleware, and error handling
+   - Created database configuration with SQLite using Sequelize
+   - Implemented Feature model with proper validation
+   - Created REST API routes for:
+     * GET /api/features - List all features with vote counts
+     * POST /api/features - Create a new feature
+     * POST /api/features/:id/vote - Upvote a feature
+   - Added proper error handling and input validation
+
+3. Flutter frontend implementation:
+   "I already created the Flutter project manually. Now, continue by implementing the following:
+   - A home screen that fetches a list of features from the backend using an HTTP GET request to /features
+   - Each feature should display its title and current vote count
+   - Add an upvote button next to each feature that sends a POST request to /features/:id/vote
+   - Use a simple and clean layout (Column/ListView with minimal styling)
+   - Use the http package for API calls
+   - Handle loading, success, and error states appropriately
+   - Place all related logic in a dedicated service class (e.g., feature_service.dart)
+   - Also, generate a basic model class for a Feature with id, title, and votes"
+
+4. Flutter components created:
+   - Updated pubspec.yaml to include http package dependency
+   - Created Feature model class with JSON serialization
+   - Implemented FeatureService class for API communication
+   - Created HomeScreen widget with proper state management
+   - Updated main.dart to use the new app structure
+   - Implemented proper error handling, loading states, and user feedback
+
+5. Add feature creation functionality:
+   "the front end must also let it add more features"
+   - Created AddFeatureDialog widget for adding new features
+   - Added floating action button to HomeScreen for creating features
+   - Integrated feature creation with the existing FeatureService
+   - Added proper form validation and user feedback
+
+6. Implement one-vote-per-device restriction:
+   "make sure each device can only vote once"
+   - Added shared_preferences dependency for local storage
+   - Created VotingService to track which features each device has voted on
+   - Updated HomeScreen to check for existing votes before allowing new votes
+   - Modified UI to show "Voted" status with visual indicators
+   - Added persistent storage to maintain vote history across app restarts
+   - Disabled vote buttons for already-voted features
+   - Added user feedback when attempting to vote twice
+
+
+I already created the Flutter project manually.
+
+Now, continue by implementing the following:
+
+- A home screen that fetches a list of features from the backend using an HTTP GET request to /features
+- Each feature should display its title and current vote count
+- Add an upvote button next to each feature that sends a POST request to /features/:id/vote
+- Use a simple and clean layout (Column/ListView with minimal styling)
+- Use the http package for API calls
+- Handle loading, success, and error states appropriately
+- Place all related logic in a dedicated service class (e.g., feature_service.dart)
+
+Also, generate a basic model class for a Feature with id, title, and votes
+
+
+________________________________________________________________________________________
+
+the front end must also let it add more features
+
+________________________________________________________________________________________
+
+make sure each device can only vote once
+
+________________________________________________________________________________________
+
+I also need the flutter web version
